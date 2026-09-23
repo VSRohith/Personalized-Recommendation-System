@@ -45,20 +45,18 @@ Personalized-Recommendation-System/
 ```
 ## 📸 Screenshots
 
-## 📸 Screenshots
-
 ### 👤 User Profile Input
 
-![User Profile Input](https://raw.githubusercontent.com/VSRohith/Personalized-Recommendation-System/main/screenshots/userinput.png)
+![User Profile Input](./screenshots/userinput.png)
 
 ### 🎯 Personalized Recommendations
 
-![Personalized Recommendations](https://raw.githubusercontent.com/VSRohith/Personalized-Recommendation-System/main/screenshots/output.png)
+![Personalized Recommendations](./screenshots/output.png)
 
 ### 🧠 User Intent Detection
 
-![User Intent Detection](https://raw.githubusercontent.com/VSRohith/Personalized-Recommendation-System/main/screenshots/detectUserintent.png)
+![User Intent Detection](./screenshots/detectUserintent.png)
 
 ### 🔄 Refined Recommendations
 
-![Refined Recommendations](https://raw.githubusercontent.com/VSRohith/Personalized-Recommendation-System/main/screenshots/improverec.png)
+![Refined Recommendations](./screenshots/improverec.png)
