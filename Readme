@@ -1,0 +1,68 @@
+# Personalized Recommendation System
+
+An AI-powered personalized recommendation system built using **Python, Flask, Ollama, and Llama 3.2**. The system analyzes a user's profile, interests, skill level, goals, and preferences to generate relevant and ranked recommendations with suitability scores and explanations.
+
+## Features
+
+- Personalized recommendations based on user profiles
+- User interest and preference analysis
+- Skill-level based recommendations
+- Recommendation ranking with suitability scores
+- AI-generated explanations
+- User feedback processing
+- Intent detection from feedback
+- Feedback-based recommendation refinement
+- Local LLM integration using Ollama
+- Flask-based interactive web interface
+
+## Technologies Used
+
+- **Python**
+- **Flask**
+- **Ollama**
+- **Llama 3.2**
+- **HTML5**
+- **CSS3**
+
+## How It Works
+
+1. The user enters their personal profile and learning preferences.
+2. The system analyzes interests, background, skill level, category, goals, and preferences.
+3. Llama 3.2 generates personalized recommendations.
+4. Each recommendation receives a suitability score from 0–100.
+5. Recommendations are ranked according to their relevance.
+6. The system provides an explanation for each recommendation.
+7. The user can provide feedback about the generated recommendations.
+8. The system detects the user's intent from the feedback.
+9. New recommendations are generated based on the detected intent and feedback.
+
+## Project Structure
+
+```text
+Personalized-Recommendation-System/
+│
+├── screenshots/
+│   ├── userinput.png
+│   ├── output.png
+│   ├── detectUserintent.png
+│   └── improverec.png
+│
+├── static/
+│   └── style.css
+│
+├── templates/
+│   └── index.html
+│
+├── app.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+Application Screenshots
+User Profile Input
+
+Generated Recommendations
+
+Detected User Intent
+
+Refined Recommendations
