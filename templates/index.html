@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Personalized Recommendation System</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="hero">
+        <div class="hero-badge">AI-POWERED</div>
+
+        <h1>Personalized Recommendation System</h1>
+
+        <p>
+          Discover recommendations tailored to your profile, interests, skill
+          level and goals.
+        </p>
+      </header>
+
+      <main class="container">
+        <!-- ============================================
+             USER PROFILE
+        ============================================= -->
+
+        <section class="card profile-card">
+          <div class="section-heading">
+            <div class="section-icon">01</div>
+
+            <div>
+              <h2>Build Your Profile</h2>
+
+              <p>Tell us about yourself to get personalized recommendations.</p>
+            </div>
+          </div>
+
+          <form action="/recommend" method="POST">
+            <div class="form-grid">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="name"> Name </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  value="{{ profile.name if profile else '' }}"
+                  required
+                />
+              </div>
+
+              <!-- Age -->
+              <div class="form-group">
+                <label for="age"> Age </label>
+
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  placeholder="Enter your age"
+                  min="1"
+                  max="100"
+                  value="{{ profile.age if profile else '' }}"
+                  required
+                />
+              </div>
+
+              <!-- Background -->
+              <div class="form-group full">
+                <label for="background"> Background </label>
+
+                <textarea
+                  id="background"
+                  name="background"
+                  placeholder="Describe your educational or professional background..."
+                  required
+                >
+{{ profile.background if profile else '' }}</textarea
+                >
+              </div>
+
+              <!-- Interests -->
+              <div class="form-group full">
+                <label for="interests"> Interests </label>
+
+                <textarea
+                  id="interests"
+                  name="interests"
+                  placeholder="Example: Python, Data Analytics, Machine Learning..."
+                  required
+                >
+{{ profile.interests if profile else '' }}</textarea
+                >
+              </div>
+
+              <!-- Skill Level -->
+              <div class="form-group">
+  <label for="skill_level">Skill Level</label>
+
+  <select id="skill_level" name="skill_level">
+
+    <option value="Beginner"
+      {% if profile and profile["skill_level"] == "Beginner" %}
+      selected
+      {% endif %}>
+      Beginner
+    </option>
+
+    <option value="Intermediate"
+      {% if profile and profile["skill_level"] == "Intermediate" %}
+      selected
+      {% endif %}>
+      Intermediate
+    </option>
+
+    <option value="Advanced"
+      {% if profile and profile["skill_level"] == "Advanced" %}
+      selected
+      {% endif %}>
+      Advanced
+    </option>
+
+  </select>
+</div>
+
+              <!-- Category -->
+              <div class="form-group">
+                <label for="category"> Preferred Category </label>
+
+                <input
+                  type="text"
+                  id="category"
+                  name="category"
+                  placeholder="Courses, Books, Projects..."
+                  value="{{ profile.category if profile else '' }}"
+                  required
+                />
+              </div>
+
+              <!-- Goal -->
+              <div class="form-group full">
+                <label for="goal"> Your Goal </label>
+
+                <textarea
+                  id="goal"
+                  name="goal"
+                  placeholder="What do you want to achieve or learn?"
+                  required
+                >
+{{ profile.goal if profile else '' }}</textarea
+                >
+              </div>
+
+              <!-- Preferences -->
+              <div class="form-group full">
+                <label for="preferences"> Preferences </label>
+
+                <textarea
+                  id="preferences"
+                  name="preferences"
+                  placeholder="Example: Practical, project-based, beginner-friendly..."
+                  required
+                >
+{{ profile.preferences if profile else '' }}</textarea
+                >
+              </div>
+
+              <!-- Number -->
+              <div class="form-group recommendation-count">
+                <label for="number"> Number of Recommendations </label>
+
+                <input
+                  type="number"
+                  id="number"
+                  name="number"
+                  min="1"
+                  max="10"
+                  value="{{ profile.number if profile else '5' }}"
+                  required
+                />
+              </div>
+            </div>
+
+            <button class="primary-btn" type="submit">
+              <span> Generate Recommendations </span>
+
+              <span class="arrow"> → </span>
+            </button>
+          </form>
+        </section>
+
+        <!-- ============================================
+             ERROR
+        ============================================= -->
+
+        {% if error %}
+
+        <section class="card error-card">
+          <div class="status-icon">!</div>
+
+          <div>
+            <h2>Something went wrong</h2>
+
+            <p>{{ error }}</p>
+          </div>
+        </section>
+
+        {% endif %}
+
+        <!-- ============================================
+             RECOMMENDATIONS
+        ============================================= -->
+
+        {% if recommendations %}
+
+        <section class="card recommendation-card">
+          <div class="section-heading">
+            <div class="section-icon result-icon">02</div>
+
+            <div>
+              <h2>AI Recommendations</h2>
+
+              <p>Personalized suggestions ranked according to your profile.</p>
+            </div>
+          </div>
+
+          <div class="results">{{ recommendations }}</div>
+        </section>
+
+        <!-- ============================================
+             DETECTED INTENT
+        ============================================= -->
+
+        {% if detected_intent %}
+
+        <section class="card intent-card">
+          <div class="section-heading">
+            <div class="section-icon intent-icon">03</div>
+
+            <div>
+              <h2>Detected User Intent</h2>
+
+              <p>
+                The AI system identified your preferences from the feedback.
+              </p>
+            </div>
+          </div>
+
+          <div class="intent-result">{{ detected_intent }}</div>
+        </section>
+
+        {% endif %}
+
+        <!-- ============================================
+             FEEDBACK
+        ============================================= -->
+
+        <section class="card feedback-card">
+          <div class="section-heading">
+            <div class="section-icon feedback-icon">04</div>
+
+            <div>
+              <h2>Improve Your Recommendations</h2>
+
+              <p>
+                Give feedback and let the system refine your recommendations.
+              </p>
+            </div>
+          </div>
+
+          <form action="/feedback" method="POST">
+            <div class="form-group">
+              <label for="feedback"> Your Feedback </label>
+
+              <textarea
+                id="feedback"
+                name="feedback"
+                placeholder="Example: I want more practical Python and SQL projects and fewer theoretical courses..."
+                required
+              ></textarea>
+            </div>
+
+            <button class="secondary-btn" type="submit">
+              <span> Refine Recommendations </span>
+
+              <span class="arrow"> → </span>
+            </button>
+          </form>
+        </section>
+
+        {% endif %}
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-line"></div>
+
+        <p>Personalized Recommendation System</p>
+
+        <span> Built with Flask · Ollama · Llama 3.2 </span>
+      </footer>
+    </div>
+  </body>
+</html>
