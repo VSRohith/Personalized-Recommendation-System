@@ -1,68 +1,62 @@
-# Personalized Recommendation System
+# 🎯 Personalized Recommendation System
 
-An AI-powered personalized recommendation system built using **Python, Flask, Ollama, and Llama 3.2**. The system analyzes a user's profile, interests, skill level, goals, and preferences to generate relevant and ranked recommendations with suitability scores and explanations.
+An AI-powered personalized recommendation system built using **Python, Flask, Ollama, and Llama 3.2**.
 
-## Features
+The system analyzes user profiles, interests, skill levels, goals, and preferences to generate personalized recommendations and refine them based on user feedback.
 
-- Personalized recommendations based on user profiles
-- User interest and preference analysis
-- Skill-level based recommendations
-- Recommendation ranking with suitability scores
-- AI-generated explanations
-- User feedback processing
-- Intent detection from feedback
-- Feedback-based recommendation refinement
-- Local LLM integration using Ollama
-- Flask-based interactive web interface
+## ✨ Features
 
-## Technologies Used
+- 👤 User Profile Analysis
+- 🎯 Personalized Recommendation Generation
+- 📊 Suitability Scoring and Ranking
+- 💡 AI-generated Recommendation Explanations
+- 🧠 User Intent Detection
+- 🔄 Feedback-based Recommendation Refinement
+- 🤖 Local LLM integration using Ollama
+- 🌐 Flask Web Application
+- 🎨 Interactive and Responsive UI
 
-- **Python**
-- **Flask**
-- **Ollama**
-- **Llama 3.2**
-- **HTML5**
-- **CSS3**
+## 🛠️ Technologies
 
-## How It Works
+- Python
+- Flask
+- Ollama
+- Llama 3.2
+- HTML
+- CSS
 
-1. The user enters their personal profile and learning preferences.
-2. The system analyzes interests, background, skill level, category, goals, and preferences.
-3. Llama 3.2 generates personalized recommendations.
-4. Each recommendation receives a suitability score from 0–100.
-5. Recommendations are ranked according to their relevance.
-6. The system provides an explanation for each recommendation.
-7. The user can provide feedback about the generated recommendations.
-8. The system detects the user's intent from the feedback.
-9. New recommendations are generated based on the detected intent and feedback.
-
-## Project Structure
+## 📁 Project Structure
 
 ```text
 Personalized-Recommendation-System/
-│
 ├── screenshots/
 │   ├── userinput.png
 │   ├── output.png
 │   ├── detectUserintent.png
 │   └── improverec.png
-│
 ├── static/
 │   └── style.css
-│
 ├── templates/
 │   └── index.html
-│
 ├── app.py
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
-Application Screenshots
-User Profile Input
+## 📸 Screenshots
 
-Generated Recommendations
+### 👤 User Profile Input
 
-Detected User Intent
+![User Profile Input](https://github.com/VSRohith/Personalized-Recommendation-System/blob/main/screenshots/userinput.png?raw=true)
 
-Refined Recommendations
+### 🎯 Personalized Recommendations
+
+![Personalized Recommendations](https://github.com/VSRohith/Personalized-Recommendation-System/blob/main/screenshots/output.png?raw=true)
+
+### 🧠 User Intent Detection
+
+![User Intent Detection](https://github.com/VSRohith/Personalized-Recommendation-System/blob/main/screenshots/detectUserintent.png?raw=true)
+
+### 🔄 Refined Recommendations
+
+![Refined Recommendations](https://github.com/VSRohith/Personalized-Recommendation-System/blob/main/screenshots/improverec.png?raw=true)
