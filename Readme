@@ -47,16 +47,18 @@ Personalized-Recommendation-System/
 
 ### 👤 User Profile Input
 
-![User Profile Input](./screenshots/userinput.png)
+<img src="./screenshots/userinput.png" alt="User Profile Input" width="100%">
 
 ### 🎯 Personalized Recommendations
 
-![Personalized Recommendations](./screenshots/output.png)
+<img src="./screenshots/output.png" alt="Personalized Recommendations" width="100%">
 
 ### 🧠 User Intent Detection
 
-![User Intent Detection](./screenshots/detectUserintent.png)
+<img src="./screenshots/detectUserintent.png" alt="User Intent Detection" width="100%">
 
 ### 🔄 Refined Recommendations
+
+<img src="./screenshots/improverec.png" alt="Refined Recommendations" width="100%">
 
 ![Refined Recommendations](./screenshots/improverec.png)
